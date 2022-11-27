@@ -10,16 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
     @State var isDetailsSideBarOpened = true
-    
     let description = """
 Please add a right description here, Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
 """
-
+    
     var body: some View {
         VStack{
-            
             HStack {
-                
                 Image(systemName: "arrowshape.turn.up.left.fill")
                     .font(.title)
                     .foregroundColor(Color.perfumePrimaryColor)
@@ -32,9 +29,6 @@ Please add a right description here, Lorem ipsum dolor sit amet, consetetur sadi
             ScrollView {
                 VStack {
                     VStack(alignment: .leading) {
-                        
-                        
-                        
                         Text("Fratelli Diamanti - Milano")
                             .foregroundColor(Color.perfumeGrayText)
                             .fontWeight(.medium)
@@ -96,7 +90,7 @@ Please add a right description here, Lorem ipsum dolor sit amet, consetetur sadi
                             }
                             .frame(maxWidth: .infinity, alignment: .center)
                             .offset(x: isDetailsSideBarOpened ? 0 : -90)
- 
+                            
                         }
                         
                         HStack {
@@ -149,78 +143,9 @@ Please add a right description here, Lorem ipsum dolor sit amet, consetetur sadi
     }
 }
 
-struct FavButton: View {
-    var height = UIScreen.main.bounds.height
-    var body: some View {
-        HStack {
-            Button(action: {}) {
-                Image(systemName: "heart")
-                    .font(.title)
-                    .foregroundColor(.gray)
-                    .padding(.horizontal, 15)
-                    .padding(.vertical, 20)
-                    .background(Color.white)
-                    .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
-                    )
-            }
-        }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
-struct AmountView: View {
-    var body: some View {
-        HStack(spacing: 10) {
-            Button(action: {}) {
-                Text("-")
-                    .font(.title)
-                    .foregroundColor(.trout)
-                    .frame(width: 34, height: 34)
-                    .padding(5)
-                    .background(Color.lightGrey)
-                    .cornerRadius(10)
-            }
-            
-            Text("1")
-                .font(.title2)
-                .fontWeight(.medium)
-            Button(action: {}) {
-                Text("+")
-                    .font(.title)
-                    .foregroundColor(.trout)
-                    .frame(width: 34, height: 34)
-                    .padding(5)
-                    .background(Color.lightGrey)
-                    .cornerRadius(10)
-            }
-            
-        }
-    }
-}
-    
-    
-    struct DetailItem: View {
-        var title: String
-        var value: String
-        var body: some View {
-            VStack {
-                Text(title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                Text(value)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-            }
-            .padding()
-            .background(Color.perfumeAccentColor)
-            .cornerRadius(20)
-            
-            
-        }
-    }
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
-    }
-    
